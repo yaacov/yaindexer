@@ -22,6 +22,9 @@ yaindexer -i ./src
 # add index files for your project and overwrite the current index files
 # with new version
 yaindexer --overwrite -i ./src
+
+# delete all index files in a project
+find . -name "index.ts" -type f | xargs rm
 ```
 
 ## Build
