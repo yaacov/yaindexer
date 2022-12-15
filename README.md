@@ -3,7 +3,8 @@
 # yaindexer
 Yet another typescript indexer
 
-yaindexer is a tool that create index files for typescript and javascrpt code.
+yaindexer is a tool that create index files for typescript and javascrpt code,
+it will automatically generate index.ts files with export-values from a list of files or folders.
 
 ## Usage
 
@@ -37,3 +38,15 @@ npm run lint:fix
 npm run build
 npm publish
 ```
+
+## Other tools for auto generation of index files
+
+https://www.npmjs.com/package/generate-index-file
+
+https://github.com/gajus/create-index
+
+https://github.com/cycloidio/import-index-generator
+
+https://github.com/Jordan-Eckowitz/indexify-vscode-extension
+
+https://github.com/fjc0k/vscode-generate-index
