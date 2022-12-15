@@ -21,7 +21,7 @@ const DEFAULT_EXPORT_LINE_TEMPLATE = "export * from './{{name}}';\n"
  */
 const program = new Command();
 program
-  .version("0.0.4")
+  .version("0.0.5")
   .description("Create index files")
   .option("-i, --in <dir>", "Input directory path - required")
   .option("--output <filename>", "Output filename")
@@ -49,6 +49,8 @@ if (!options.output) {
 if (!options.template) {
     options.template = DEFAULT_EXPORT_LINE_TEMPLATE;
 }
+// Replace \n with EOL
+options.template = options.template.replace(/\\n/g, '\n');
 
 if (!options.comment) {
     options.comment = DEFAULT_COMMENT;

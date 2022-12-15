@@ -1,6 +1,6 @@
 {
   "name": "yaindexer",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Yet another typescript indexer",
   "homepage": "https://github.com/yaacov/yaindexer",
   "main": "index.js",
