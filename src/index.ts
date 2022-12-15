@@ -10,7 +10,7 @@ let regexp: RegExp;
 let skipRegexp: RegExp;
 
 const DEFAULT_OUTPUT = 'index.ts';
-const DEFAULT_COMMENT = '// Auto generated index file.';
+const DEFAULT_COMMENT = '// Auto generated index file.\n//  see: https://github.com/yaacov/yaindexer\n';
 const DEFAULT_REGEXP = '^(?!.*test\.ts[x]?).*\.ts[x]?$';
 const DEFAULT_SKIP_REGEXP = '';
 const DEFAULT_EXPORT_LINE_TEMPLATE = "export * from './{{name}}';\n"
