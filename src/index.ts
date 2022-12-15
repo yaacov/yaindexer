@@ -10,7 +10,8 @@ let regexp: RegExp;
 let skipRegexp: RegExp;
 
 const DEFAULT_OUTPUT = 'index.ts';
-const DEFAULT_COMMENT = '// Auto generated index file.\n//  see: https://github.com/yaacov/yaindexer\n';
+const DEFAULT_COMMENT = '// Auto generated index file.\n//  see: https://github.com/yaacov/yaindexer';
+// eslint-disable-next-line no-useless-escape
 const DEFAULT_REGEXP = '^(?!.*test\.ts[x]?).*\.ts[x]?$';
 const DEFAULT_SKIP_REGEXP = '';
 const DEFAULT_EXPORT_LINE_TEMPLATE = "export * from './{{name}}';\n"
@@ -20,7 +21,7 @@ const DEFAULT_EXPORT_LINE_TEMPLATE = "export * from './{{name}}';\n"
  */
 const program = new Command();
 program
-  .version("0.0.1")
+  .version("0.0.4")
   .description("Create index files")
   .option("-i, --in <dir>", "Input directory path - required")
   .option("--output <filename>", "Output filename")
@@ -79,7 +80,7 @@ try {
  * 
  * @param dirPath is the directory to read
  */
-const readSrcDir = async (dirPath: string) => {
+const createIndexFiles = async (dirPath: string) => {
     let fileTxt = "";
     const indexFile = path.join(dirPath, options.output);
     const indexFileExists = existsSync(indexFile);
@@ -118,7 +119,7 @@ const readSrcDir = async (dirPath: string) => {
 
             // Index sub directories
             if (isDir) {
-                await readSrcDir(filePath);
+                await createIndexFiles(filePath);
             }
         }
 
@@ -134,21 +135,14 @@ const readSrcDir = async (dirPath: string) => {
     }
 };
 
-/**
- * Create an Index files from a directory
- */
-const createIndexFiles = async () => {
-    const data = await readSrcDir(options.in);
-};
-
 console.log('Indexing options:')
-for (let opt in options) {
+for (const opt in options) {
     console.log(`  ${opt}: ${options[opt]}`);
 }
 
 console.log('')
 console.log('Running...')
 
-createIndexFiles().then(() => { 
+createIndexFiles(options.in).then(() => { 
     console.log('Done.')
 });
