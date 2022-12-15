@@ -1,0 +1,41 @@
+{
+  "name": "yaindexer",
+  "version": "0.0.3",
+  "description": "Yet another typescript indexer",
+  "homepage": "https://github.com/yaacov/yaindexer",
+  "main": "index.js",
+  "bin": {
+    "yaindexer": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "npx tsc",
+    "clean": "rm -rf ./dist",
+    "cleanall": "npm run clean && rm -rf ./node_modules",
+    "lint": "npx eslint ./src",
+    "lint:fix": "npx eslint ./src --fix"
+  },
+  "keywords": [
+    "js",
+    "ts",
+    "javascript",
+    "typescript",
+    "indexer",
+    "autoindex",
+    "index"
+  ],
+  "author": "Yaacov Zamir <kobi.zamir@gmail.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "commander": "^9.4.1",
+    "@types/mustache": "^4.2.2",
+    "mustache": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.5",
+    "@types/node": "^18.11.10",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.29.0",
+    "typescript": "^4.9.3"
+  }
+}
