@@ -1,12 +1,12 @@
 {
   "name": "yaindexer",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Yet another typescript indexer",
   "homepage": "https://github.com/yaacov/yaindexer",
   "main": "index.js",
   "bin": {
-    "yaindexer": "./dist/index.js",
-    "findImports": "./dist/findImports.js"
+    "yaIndexer": "./dist/index.js",
+    "yaImportIndexer": "./dist/findImports.js"
   },
   "scripts": {
     "build": "npx tsc",
