@@ -5,7 +5,8 @@
   "homepage": "https://github.com/yaacov/yaindexer",
   "main": "index.js",
   "bin": {
-    "yaindexer": "./dist/index.js"
+    "yaindexer": "./dist/index.js",
+    "findImports": "./dist/findImports.js"
   },
   "scripts": {
     "build": "npx tsc",
